@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64">
+  <circle cx="32" cy="52" r="7" stroke="url(#a)" stroke-width="2"/>
+  <path stroke="url(#b)" stroke-linecap="round" stroke-width="2" d="M32 43.5V8m0 0-4 5m4-5 4 5"/>
+  <path stroke="url(#c)" stroke-linecap="round" stroke-width="2"
+        d="m35 45 4.3897-15.8029C39.7504 27.8986 40.9326 27 42.2803 27H54m0 0-5 4.5m5-4.5-5-4.5"/>
+  <path stroke="url(#d)" stroke-linecap="round" stroke-width="2"
+        d="m29 44-4.3666-14.8465C24.2579 27.8768 23.0861 27 21.7553 27H10m0 0 5 4.5M10 27l5-4.5"/>
+  <defs>
+    <linearGradient id="a" x1="32" x2="32" y1="44" y2="60" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00FBEE"/>
+      <stop offset="1" stop-color="#00FBEE" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="b" x1="32" x2="32" y1="8" y2="42.5" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00FBEE"/>
+      <stop offset="1" stop-color="#00FBEE" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="c" x1="43" x2="36" y1="22.5" y2="44.5" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00FBEE"/>
+      <stop offset="1" stop-color="#00FBEE" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="d" x1="21" x2="29.5" y1="22.5" y2="44" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00FBEE"/>
+      <stop offset="1" stop-color="#00FBEE" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+</svg>

@@ -1,0 +1,24 @@
+image: node:14.16.0-alpine3.11
+
+variables:
+  CI: "use"
+  TAG: registry.gmdp.io/glonassmobile/tapmobile/web
+
+default:
+  before_script:
+    - mkdir -p ~/.docker/
+    - cat $docker_config > ~/.docker/config.json
+    - cat $npmrc > ~/.npmrc
+
+stages:
+  - publish
+
+publish_master:
+  only:
+    - main
+  stage: publish
+  image: docker:19.03.0
+  script:
+    - export DOCKER_TAG=$TAG:latest
+    - docker build -t $DOCKER_TAG .
+    - docker push $DOCKER_TAG

@@ -1,0 +1,32 @@
+.gradient {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.mobile {
+  height: 100%;
+
+  > * {
+    height: 100vh;
+  }
+
+  @include xl-block {
+    display: none;
+  }
+}
+
+.desktop {
+  display: none;
+  width: 100%;
+  height: 100%;
+
+  @include xl-block {
+    display: block;
+    background: linear-gradient(90deg, rgb(36 70 72) 0%, rgb(40 46 49) 35%, rgb(40 45 49 / 70%) 100%);
+  }
+}

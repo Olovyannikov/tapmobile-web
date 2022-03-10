@@ -1,0 +1,31 @@
+.animation {
+  position: relative;
+  margin-bottom: 80px;
+  min-height: 170px;
+
+  @include xl-block {
+    margin-bottom: 163px;
+  }
+}
+
+.text p {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0;
+  width: 100%;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 28px;
+  text-align: center;
+  color: var(--color-black);
+
+  @include xl-block {
+    position: relative;
+    margin-bottom: 48px;
+    max-width: 628px;
+    font-size: 24px;
+    line-height: 32px;
+    text-align: left;
+  }
+}

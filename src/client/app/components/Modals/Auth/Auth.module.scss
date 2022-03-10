@@ -1,0 +1,13 @@
+.auth {
+  @include xl-block {
+    min-width: 458px;
+  }
+}
+
+.tabs {
+  margin-bottom: var(--space-large);
+
+  li {
+    width: auto;
+  }
+}

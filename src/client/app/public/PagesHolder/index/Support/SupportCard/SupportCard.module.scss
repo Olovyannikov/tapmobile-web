@@ -1,0 +1,22 @@
+.card {
+  border: 1px solid #ddd;
+  border-radius: var(--radius-m);
+  padding: 32px 24px;
+}
+
+.img {
+  margin-bottom: var(--space-m);
+}
+
+.card h5 {
+  margin: 0 0 var(--space-m);
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+
+  @include xl-block {
+    margin-bottom: var(--space-l);
+    font-size: 32px;
+    line-height: 40px;
+  }
+}

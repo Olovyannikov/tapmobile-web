@@ -1,0 +1,11 @@
+.article {
+  display: none;
+}
+
+.active {
+  display: flex;
+
+  @include xl-block {
+    display: grid;
+  }
+}

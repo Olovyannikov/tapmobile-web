@@ -1,0 +1,19 @@
+.opportunities {
+  margin-bottom: 68px;
+
+  @include xl-block {
+    text-align: center;
+  }
+}
+
+.description {
+  margin: 0 auto var(--space-xxl);
+  font-size: 20px;
+  line-height: 28px;
+
+  @include xl-block {
+    margin-bottom: var(--space-extra);
+    max-width: 635px;
+  }
+}
+

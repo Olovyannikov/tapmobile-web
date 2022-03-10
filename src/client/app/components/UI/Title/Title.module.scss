@@ -1,0 +1,31 @@
+.title {
+  margin: 0;
+}
+
+h1.title {
+  margin-bottom: var(--space-l);
+  font-weight: 700;
+  font-size: clamp(2.25rem, 2vw + 1rem, 3.5rem);
+  line-height: clamp(2.75rem, 2vw + 1rem, 4rem);
+  color: var(--color-white);
+
+  @include xl-block {
+    margin-bottom: var(--space-xl);
+    font-size: 56px;
+    line-height: 64px;
+  }
+}
+
+h2.title {
+  margin-bottom: var(--space-l);
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 36px;
+  color: var(--color-black);
+
+  @include xl-block {
+    margin: 0 0 var(--space-xl);
+    font-size: 48px;
+    line-height: 56px;
+  }
+}

@@ -1,0 +1,34 @@
+.support {
+  padding-bottom: 72px;
+
+  @include xl-block {
+    padding-bottom: 138px;
+    text-align: center;
+  }
+}
+
+.description {
+  margin: 0 0 var(--space-xl);
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 28px;
+
+  @include xl-block {
+    margin: 0 auto var(--space-extra);
+    width: 100%;
+    max-width: 931px;
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+.cards {
+  display: grid;
+  text-align: left;
+  gap: var(--space-l);
+
+  @include lg-block {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+  }
+}

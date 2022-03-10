@@ -1,0 +1,70 @@
+.selected {
+  position: static;
+}
+
+.tab {
+  --paddings: 32px;
+
+  position: relative;
+  padding-bottom: 8px;
+
+  button {
+    width: 100%;
+
+    @include xl-block {
+      min-width: 189px;
+      font-size: 18px;
+      line-height: 32px;
+    }
+  }
+
+  &:first-child {
+    padding-right: var(--paddings);
+
+    .underline {
+      left: calc(var(--paddings) * -1);
+      right: unset;
+
+      @include xl-block {
+        left: 0;
+      }
+    }
+
+    @include xl-block {
+      padding-right: 0;
+    }
+  }
+
+  &:last-child {
+    padding-left: var(--paddings);
+
+    .underline {
+      left: unset;
+      right: calc(var(--paddings) * -1);
+
+      @include xl-block {
+        right: 0;
+      }
+    }
+
+    @include xl-block {
+      padding-left: 0;
+    }
+  }
+}
+
+.underline {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  width: calc(100% + var(--paddings));
+  height: 2px;
+  background-color: var(--color-grey-1);
+
+  @include xl-block {
+    //width: calc(100% + 25px * 2);
+    width: 100%;
+  }
+}

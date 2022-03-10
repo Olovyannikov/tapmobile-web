@@ -1,0 +1,89 @@
+.achievements {
+  @include md-block {
+    display: grid;
+    grid-template-columns: 302px 1fr;
+    column-gap: clamp(20px, 10vw, 133px);
+  }
+}
+
+.image {
+  overflow: hidden;
+  position: relative;
+  border-radius: var(--radius-m);
+  margin-bottom: 48px;
+  width: 100%;
+  height: fit-content;
+  min-height: 224px;
+  background: #C4C4C4;
+
+  @include sm-block {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    width: 302px;
+    height: 392px;
+  }
+}
+
+.title {
+  margin: 0 0 28px;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+
+  @include md-block {
+    margin-bottom: 63px;
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
+
+.list {
+  display: grid;
+  gap: 40px;
+
+  @include lg-block {
+    grid-template-columns: 1fr 1fr;
+    gap: 77px 32px;
+  }
+}
+
+.item {
+  position: relative;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+  }
+
+  &::before {
+    top: -12px;
+    border-radius: 50%;
+    width: 3px;
+    height: 3px;
+
+    @include lg-block {
+      top: -16px;
+    }
+  }
+
+  &::after {
+    top: -11px;
+    width: 158px;
+    height: 1px;
+    background: linear-gradient(90deg, #b1b1b1 0%, var(--color-white) 100%);
+
+    @include lg-block {
+      top: -15px;
+    }
+  }
+
+  @include lg-block {
+    font-size: 18px;
+    line-height: 26px;
+  }
+}

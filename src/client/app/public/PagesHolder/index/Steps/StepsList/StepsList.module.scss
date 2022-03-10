@@ -1,0 +1,96 @@
+.list {
+  counter-reset: item;
+  position: relative;
+  z-index: 2;
+  display: grid;
+  margin-bottom: var(--space-large);
+  color: var(--color-white);
+  gap: var(--space-large);
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 39.5px;
+    top: 20px;
+    z-index: 0;
+    width: 1px;
+    height: 270px;
+    background: linear-gradient(to bottom, var(--color-primary) 0%, rgb(255 255 255 / 0%) 100%);
+  }
+
+  @include xl-block {
+    align-items: start;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    &::after {
+      top: 14px;
+      width: 824px;
+      height: 1px;
+      background: linear-gradient(to right, var(--color-primary) 0%, rgb(255 255 255 / 0%) 100%);
+    }
+  }
+}
+
+.item {
+  display: grid;
+  column-gap: var(--space-m);
+  grid-template-columns: 79px 1fr;
+
+  &::before {
+    counter-increment: item;
+    content: counter(item) " этап";
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 4px 0;
+    border-radius: var(--radius-l);
+    font: var(--font-default);
+    line-height: 20px;
+    color: var(--color-grey-1);
+    background-color: var(--color-primary);
+
+    @include xl-block {
+      margin: 0 0 var(--space-xl);
+      padding: 4px 16px;
+    }
+  }
+
+  &:nth-child(2) {
+    margin-bottom: 28px;
+  }
+
+  @include xl-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+}
+
+.item b {
+  grid-column: 2;
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+
+  @include xl-block {
+    margin-bottom: var(--space-l);
+    font-size: 32px;
+    line-height: 28px;
+  }
+}
+
+.item p {
+  grid-column: 2;
+  margin: 0;
+  font: var(--font-default);
+  color: rgb(255 255 255 / 80%);
+
+  @include xl-block {
+    font-size: 18px;
+    line-height: 26px;
+  }
+}

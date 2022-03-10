@@ -1,0 +1,31 @@
+.createOperator {
+  position: relative;
+  z-index: 1;
+  padding-top: 327px;
+  padding-bottom: 180px;
+  background-color: var(--color-white);
+
+  @include breakpoint(375px) {
+    padding-top: 307px;
+  }
+
+  @include xl-block {
+    padding-top: 156px;
+    padding-bottom: 160px;
+  }
+}
+
+h2.title {
+  text-align: center;
+  color: var(--color-black);
+
+  @include xl-block {
+    margin-bottom: 60px;
+    max-width: 602px;
+    text-align: left;
+  }
+}
+
+.container {
+  position: relative;
+}

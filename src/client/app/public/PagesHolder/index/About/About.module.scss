@@ -1,0 +1,7 @@
+.about {
+  margin-bottom: 96px;
+
+  @include xl-block {
+    margin-bottom: 140px;
+  }
+}

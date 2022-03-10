@@ -1,0 +1,87 @@
+.animation__container {
+  height: 100%;
+}
+
+.animation__container > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 4px;
+  height: 100%;
+  min-height: 450px;
+
+  @include xl-block {
+    justify-content: space-between;
+    padding-top: 90px;
+    padding-bottom: 135px;
+  }
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.point {
+  position: relative;
+  border-radius: 50%;
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-white);
+  opacity: 1;
+}
+
+.point:first-child ~ .point {
+  margin-left: 50px;
+}
+
+.point:first-child ~ .row .point {
+  margin-top: 50px;
+}
+
+.line {
+  position: absolute;
+  display: block;
+  background: linear-gradient(90deg, #b1b1b1 0%, rgb(255 255 255 / 0%) 100%);
+}
+
+.line--hidden {
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.line--bottom,
+.line--top {
+  left: 50%;
+  background: linear-gradient(180deg, #b1b1b1 0%, rgb(255 255 255 / 0%) 100%);
+  transform: translateX(-50%);
+  transition: opacity 1s, height 0.5s;
+}
+
+.line--bottom {
+  top: 100%;
+  background: linear-gradient(180deg, #fff 0%, #b1b1b1 100%);
+}
+
+.line--top {
+  bottom: 100%;
+}
+
+.line--left,
+.line--right {
+  top: 50%;
+  background: linear-gradient(-90deg, #b1b1b1 50%, rgb(255 255 255 / 0%) 100%);
+  transform: translateY(-50%);
+  transition: opacity 1s, width 0.5s;
+}
+
+.line--left {
+  right: 100%;
+  background: linear-gradient(90deg, #fff 50%, #b1b1b1 100%);
+}
+
+.line--right {
+  left: 100%;
+}

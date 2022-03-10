@@ -1,0 +1,65 @@
+.baloon {
+  left: 20px;
+  margin-top: 80px;
+  padding: var(--space-xxl) var(--space-xl);
+  width: calc(100% - 40px);
+  max-width: 1280px;
+
+  @include xl-block {
+    left: 0;
+    bottom: -60px;
+    margin: 0 auto;
+    padding-right: 60px;
+    padding-left: 60px;
+    width: 100%;
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+
+  @include xl-block {
+    flex-direction: row;
+    gap: var(--space-large);
+  }
+}
+
+.item {
+  display: flex;
+  gap: var(--space-xs);
+
+  svg {
+    flex-shrink: 0;
+    padding: 8px;
+    width: 48px;
+    height: 48px;
+  }
+
+  p {
+    margin: 0;
+    font: var(--font-default);
+    word-break: break-word;
+    color: var(--color-black);
+    opacity: 0.8;
+
+    @include sm-block {
+      word-break: normal;
+    }
+
+    @include xl-block {
+      max-width: 300px;
+      font-size: 18px;
+      line-height: 26px;
+    }
+  }
+
+  @include breakpoint(375px) {
+    gap: var(--space-l);
+  }
+
+  @include xl-block {
+    align-items: center;
+  }
+}

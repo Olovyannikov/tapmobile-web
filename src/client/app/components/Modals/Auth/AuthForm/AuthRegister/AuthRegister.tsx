@@ -13,7 +13,7 @@ import s from './AuthRegister.module.scss';
 
 export const AuthRegister = (): JSX.Element => {
     const form = useForm({
-        mode: 'onChange',
+        mode: 'onTouched',
         resolver: yupResolver(RegisterValidation),
     });
 
@@ -26,7 +26,7 @@ export const AuthRegister = (): JSX.Element => {
                 <FormInput title='Имя' name='name' type='text' />
                 <FormInput title='Фамилия' name='lastName' type='text' />
                 <FormInput full title='Компания' name='company' type='text' />
-                <FormInput full title='Телефон' name='tel' type='text' mask='+7(###)-##-##-###' />
+                <FormInput full title='Телефон' name='tel' type='text' mask='+7(###)-###-##-##' placeholder=' ' />
                 <FormInput full type='password' title='Пароль' name='password' />
                 <FormInput full type='password' title='Повторите пароль' name='passwordConfirm' />
                 <Button disabled={!form.formState.isValid} onClick={onSubmit}>

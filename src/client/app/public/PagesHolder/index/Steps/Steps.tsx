@@ -11,9 +11,11 @@ import simDesktop from './img/sim-desktop.png';
 import s from './Steps.module.scss';
 import { DotsAnimation } from '@/components';
 import cn from 'classnames';
+import { useTypedDispatch } from '@client/hooks/useTypedDispatch';
 
 export const Steps = (): JSX.Element => {
     const isLarge = useIsLarge();
+    const { modals: { showPublicModal } } = useTypedDispatch();
 
     return (
         <section className={s.section}>
@@ -21,7 +23,7 @@ export const Steps = (): JSX.Element => {
                 <div className={s.content}>
                     <Title className={s.title}>3 этапа для запуска вашего оператора</Title>
                     <StepsList />
-                    <Button className={s.btn}>Запустить оператора</Button>
+                    <Button className={s.btn} onClick={() => showPublicModal('auth')}>Запустить оператора</Button>
                     <div className={s.img}>
                         {isLarge ?
                             <Image src={simDesktop} alt='' aria-hidden /> :

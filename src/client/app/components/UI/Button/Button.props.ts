@@ -5,4 +5,5 @@ export interface ButtonProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTML
     full?: boolean;
     disabled?: boolean;
     children?: ReactNode;
+    size?: 'small' | 'medium'
 }

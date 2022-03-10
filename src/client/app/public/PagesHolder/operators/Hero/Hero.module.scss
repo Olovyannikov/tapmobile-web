@@ -1,0 +1,22 @@
+.hero {
+  @include webp('/img/operators/hero.jpeg', '/img/operators/hero.webp');
+
+  margin-bottom: 52px;
+  padding-top: 148px;
+  padding-bottom: 60px;
+
+  button {
+    width: 100%;
+
+    @include xl-block {
+      width: fit-content;
+    }
+  }
+
+  @include xl-block {
+    @include webp('/img/operators/hero-desktop.jpeg', '/img/operators/hero-desktop.webp');
+
+    padding-top: 78px;
+    padding-bottom: 110px;
+  }
+}

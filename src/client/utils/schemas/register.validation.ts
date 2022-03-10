@@ -1,15 +1,16 @@
 import * as yup from 'yup';
 import { LoginValidation } from './login.validation';
-import { phoneRegExp } from '@client/utils/utils';
+import { NameValidation, TelValidation } from './fields.validation';
 
 export const RegisterValidation = yup
     .object()
     .shape({
-        name: yup.string().required('Имя обязательно'),
+        lastName: yup.string().min(3, 'Пожалуйста, введите корректную фамилию'),
         passwordConfirm: yup
             .string()
             .required('Пожалуйста, повторите пароль')
             .oneOf([yup.ref('password'), null], 'Пароли должны совпадать'),
-        tel: yup.string().required('Пожалуйста, введите свой номер телефона'),
     })
-    .concat(LoginValidation);
+    .concat(LoginValidation)
+    .concat(NameValidation)
+    .concat(TelValidation);

@@ -50,7 +50,7 @@ export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
 
     return (
         <header className={cn(s.header, { [s.hidden]: isHidden, [s.scrolled]: isScrolled }, className)} {...props}>
-            <Container className={s.container} style={{ paddingRight: isActive ? 20 + width : 20 }}>
+            <Container className={s.container}>
                 {router.pathname === '/' ? (
                     <a className={cn(s.logo, { [s.active]: isActive })}>
                         <Logo />

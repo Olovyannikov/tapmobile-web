@@ -29,6 +29,10 @@
       color: var(--color-black);
     }
   }
+
+  @include xl-block {
+    background-color: var(--color-white);
+  }
 }
 
 .logo {

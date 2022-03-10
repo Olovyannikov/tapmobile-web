@@ -1,5 +1,7 @@
 import cn from 'classnames';
 
+import { useTypedDispatch } from '@client/hooks/useTypedDispatch';
+
 import Image from 'next/image';
 import { Button, Container, Title } from '@/ui';
 
@@ -7,6 +9,7 @@ import s from './Demo.module.scss';
 import { DotsAnimation } from '@/components';
 
 export const Demo = ({}): JSX.Element => {
+    const { modals: { showPublicModal } } = useTypedDispatch();
 
     return (
         <section className={s.demo}>
@@ -14,7 +17,7 @@ export const Demo = ({}): JSX.Element => {
                 <div className={s.wrapper}>
                     <div className={s.content}>
                         <Title className={s.title}>Получите демо доступ к личному кабинету</Title>
-                        <Button className={s.btn}>Получить консультацию</Button>
+                        <Button className={s.btn} onClick={() => showPublicModal('feedback')}>Получить консультацию</Button>
                     </div>
                     <div className={s.img}>
                         <Image src='/img/demo-image.png' layout='responsive' width='500' height='250' />

@@ -1,45 +1,9 @@
-import s from '@client/app/public/PagesHolder/index/CreateOperator/TextMobile/TextMobile.module.scss';
 import { motion } from 'framer-motion';
 
+import s from './TextDesktop.module.scss';
+import { animation, animation2, animation3 } from './TextDesktop.props';
+
 export const TextDesktop = (): JSX.Element => {
-    const animation = {
-        initial: 'hidden',
-        whileInView: 'visible',
-        viewport: {
-            once: true,
-        },
-        transition: {
-            duration: 4,
-            delay: 2,
-        },
-        variants: {
-            visible: {
-                opacity: [0.2, 1, 1],
-            },
-            hidden: { opacity: 0.2 },
-        },
-    };
-
-    const animation2 = {
-        ...animation,
-        transition: {
-            duration: 4,
-            delay: 4,
-        },
-    };
-
-    const animation3 = {
-        ...animation,
-        transition: {
-            duration: 4,
-            delay: 8,
-        },
-        variants: {
-            visible: { opacity: [0.2, 1, 1] },
-            hidden: { opacity: 0.2 },
-        },
-    };
-
     return (
         <div className={s.text}>
             <div className={s.animation}>

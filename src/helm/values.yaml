@@ -1,5 +1,5 @@
 tlsEnabled: true
 image: registry.gmdp.io/glonassmobile/tapmobile/web
 tag: latest
-domain: tapmobile.one
+domain: tapmobile.ru
 prefix: "/"

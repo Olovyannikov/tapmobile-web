@@ -40,9 +40,11 @@
   a {
     font-size: 16px;
     line-height: 28px;
+    color: var(--color-white);
 
     @include xl-block {
       line-height: 20px;
+      color: var(--color-ash);
 
       &[class*="active"] {
         &::after {
@@ -65,7 +67,6 @@
 }
 
 .social {
-  margin-left: auto;
   gap: 8px;
 
   a {
@@ -73,10 +74,13 @@
     transition: 0.3s ease-in-out;
 
     @include xl-block {
+      margin-left: auto;
       color: var(--color-grey-1);
       opacity: 0.1;
 
-      &:hover {
+      &:hover,
+      &:focus {
+        outline: none;
         opacity: 1;
       }
     }

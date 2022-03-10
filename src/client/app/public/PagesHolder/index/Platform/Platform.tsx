@@ -27,8 +27,8 @@ export const Platform = ({}): JSX.Element => {
                 <div className={s.glow} />
                 <div className={s.img}>
                     <Image src='/img/platform.png' width={873} height={482} />
+                    <Doughnut className={s.doughnut} />
                 </div>
-                <Doughnut className={s.doughnut} />
             </div>
         </section>
     );

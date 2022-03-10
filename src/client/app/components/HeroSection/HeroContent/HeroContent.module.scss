@@ -1,0 +1,33 @@
+.content {
+  position: relative;
+  z-index: 120;
+}
+
+.title {
+  max-width: 797px;
+}
+
+.subtitle {
+  max-width: 576px;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: var(--space-m);
+
+  button {
+    width: inherit;
+
+    @include md-block {
+      width: fit-content;
+      font-size: 18px;
+    }
+  }
+
+  @include md-block {
+    flex-direction: row;
+    gap: var(--space-xxl);
+  }
+}

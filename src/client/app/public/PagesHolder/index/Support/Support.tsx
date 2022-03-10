@@ -21,7 +21,7 @@ export const Support = (): JSX.Element => {
                                 id={d.id}
                                 items={d.items}
                                 title={d.title}
-                            />
+                            />,
                         )
                     }
                 </div>

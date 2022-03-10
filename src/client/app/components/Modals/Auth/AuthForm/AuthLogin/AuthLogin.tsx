@@ -7,6 +7,8 @@ import { FormInput } from '@/components';
 
 import { LoginValidation } from '@client/utils/schemas/login.validation';
 
+import s from './AuthLogin.module.scss';
+
 export const AuthLogin = (): JSX.Element => {
     const form = useForm({
         mode: 'onChange',
@@ -25,8 +27,10 @@ export const AuthLogin = (): JSX.Element => {
                            name='email' full />
                 <FormInput
                     full type='password' name='password' title='Введите пароль' />
-                <Button disabled={!form.formState.isValid} onClick={onSubmit}>Войти</Button>
-                <Button variant='ghost'>Восстановить пароль</Button>
+                <div className={s.controls}>
+                    <Button disabled={!form.formState.isValid} onClick={onSubmit}>Войти</Button>
+                    <Button variant='ghost'>Восстановить пароль</Button>
+                </div>
             </Form>
         </FormProvider>
     );

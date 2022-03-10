@@ -19,14 +19,27 @@ spec:
       imagePullSecrets:
         - name: regcred
       containers:
-        - name: {{ .Chart.Name }}
-          image: {{ .Values.image }}:{{ .Values.tag }}
+        - name: {{ .Chart.Name }}-static
+          image: {{ .Values.image }}/static:{{ .Values.tag }}
           imagePullPolicy: Always
           ports:
             - containerPort: 80
           env:
             - name: KUBE_POD_NAME
               value: {{ .Chart.Name }}
+            - name: KUBE_NAMESPACE_NAME
+              valueFrom:
+                fieldRef:
+                  apiVersion: v1
+                  fieldPath: metadata.namespace
+        - name: {{ .Chart.Name }}-server
+          image: {{ .Values.image }}/server:{{ .Values.tag }}
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
+          env:
+            - name: KUBE_POD_NAME
+              value: { { .Chart.Name } }
             - name: KUBE_NAMESPACE_NAME
               valueFrom:
                 fieldRef:

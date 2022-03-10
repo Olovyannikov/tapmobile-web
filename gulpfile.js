@@ -16,6 +16,7 @@ const clean = () => gulp.src([
 const createDirs = (cb) => {
     fs.mkdirSync('build', { recursive: true });
     fs.mkdirSync('src/client/generated', { recursive: true });
+    fs.mkdirSync('build/public', { recursive: true });
 
     cb();
 };
@@ -49,6 +50,10 @@ const svgSprites = () => {
         .pipe(dest(['public/sprite/']));
 };
 
+const copyStatic = () => {
+    return gulp.src("./public/**/*").pipe(gulp.dest("build/public"));
+};
+
 exports.default = series(
     createDirs,
     clean,
@@ -58,5 +63,6 @@ exports.default = series(
         copyDockerToBuild,
         generateClientApi,
         generatePackageJson,
+        copyStatic
     ),
 );

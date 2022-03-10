@@ -1,13 +1,28 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ .Chart.Name }}
+  name: {{ .Chart.Name }}-server
   namespace: {{ .Release.Namespace }}
   labels:
-    app: {{ .Chart.Name }}
+    app: {{ .Chart.Name }}-server
 spec:
   selector:
-    app: {{ .Chart.Name }}
+    app: {{ .Chart.Name }}-server
+  ports:
+  - protocol: TCP
+    port: 3000
+    targetPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Chart.Name }}-static
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: {{ .Chart.Name }}-static
+spec:
+  selector:
+    app: {{ .Chart.Name }}-static
   ports:
   - protocol: TCP
     port: 80

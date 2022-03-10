@@ -5,13 +5,13 @@ import { SetStateAction, useState } from 'react';
 import { useIsLarge } from '@client/hooks/useMediaQuery';
 
 import { Button, Container, Title } from '@/ui';
+import { DotsAnimation } from '@/components';
 
 import { Swiper, SwiperProps, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination, Controller, SwiperOptions } from 'swiper';
+import { Autoplay, Pagination, Controller } from 'swiper';
 
 import s from './SliderToStart.module.scss';
 import { sliderToStartData, SliderToStartInterface } from './SliderToStart.interface';
-import { DotsAnimation } from '@/components';
 
 export const SliderToStart = (): JSX.Element => {
     const isLarge = useIsLarge();
@@ -24,11 +24,11 @@ export const SliderToStart = (): JSX.Element => {
         controller: { control: secondSwiper },
         className: cn(s.slider, s.active, s.titles),
         spaceBetween: 24,
-        // autoplay: {
-        //     delay: slidesTransitionDelay,
-        //     pauseOnMouseEnter: true,
-        //     reverseDirection: !isLarge,
-        // },
+        autoplay: {
+            delay: slidesTransitionDelay,
+            pauseOnMouseEnter: true,
+            reverseDirection: !isLarge,
+        },
         pagination: {
             clickable: true,
             clickableClass: s.pagination,
@@ -56,7 +56,7 @@ export const SliderToStart = (): JSX.Element => {
         breakpoints: {
             1280: {
                 slidesPerView: 1,
-                pagination: false
+                pagination: false,
             },
         },
     };

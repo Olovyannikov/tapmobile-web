@@ -1,0 +1,105 @@
+.section {
+  margin-bottom: 54px;
+
+  @include xl-block {
+    margin-bottom: 100px;
+  }
+}
+
+.wrapper {
+  @include webp("/img/connect.webp", "/img/connect.jpeg");
+
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  padding: 32px 24px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #093d88;
+
+  h2 {
+    position: relative;
+    z-index: 1;
+    margin: 0 0 32px;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 36px;
+    color: var(--color-white);
+
+    @include xl-block {
+      margin-bottom: 24px;
+      font-size: 44px;
+      line-height: 52px;
+      text-align: center;
+    }
+  }
+
+  button {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+
+    @include xl-block {
+      width: fit-content;
+      min-width: 193px;
+    }
+  }
+
+  @include xl-block {
+    @include webp("/img/connect-desktop.webp", "/img/connect-desktop.jpeg");
+
+    display: grid;
+    place-items: center;
+    padding: 78px 0;
+    background-position: center right;
+  }
+}
+
+.animation {
+  position: absolute;
+  right: -150px;
+  z-index: 0;
+  width: 100%;
+  opacity: 0.2;
+
+  @include xl-block {
+    right: 0;
+
+    [class*="row"] {
+      [class*="point"] {
+        &:last-child {
+          opacity: 0;
+        }
+
+        &:nth-child(12) {
+          opacity: 0.1;
+        }
+
+        &:nth-child(11) {
+          opacity: 0.2;
+        }
+
+        &:nth-child(10) {
+          opacity: 0.3;
+        }
+
+        &:nth-child(9) {
+          opacity: 0.4;
+        }
+
+        &:nth-child(8) {
+          opacity: 0.5;
+        }
+
+        &:nth-child(7) {
+          opacity: 0.6;
+        }
+
+        &:nth-child(6) {
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+}

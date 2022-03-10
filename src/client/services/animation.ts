@@ -122,7 +122,7 @@ export const lineAnimation = (element, sizeX, sizeY, time) => {
     const heightpoint2 = width[1].getBoundingClientRect().top;
     const heightPoint = Math.abs(heightpoint2 - heightpoint1);
 
-    const hp = window.innerWidth >= 1200 ? heightpoint2 * 0.93 : heightpoint2 * 2.1;
+    const hp = window.innerWidth >= 1200 ? heightpoint2 * 1.5 : heightpoint2 * 2.1;
 
     clearField(element);
 

@@ -1,4 +1,4 @@
-image: node:14.16.0-alpine3.11
+image: node:16-alpine3.14
 
 variables:
   CI: "use"
@@ -10,15 +10,42 @@ default:
     - cat $docker_config > ~/.docker/config.json
     - cat $npmrc > ~/.npmrc
 
-stages:
-  - publish
+cache:
+  paths:
+    - node_modules/
 
-publish_master:
+stages:
+    - build
+    - publish
+
+build_next:
+    stage: build
+    script:
+        - yarn
+    artifacts:
+        when: always
+        paths:
+            - build
+
+publish_server_master:
   only:
     - main
   stage: publish
-  image: docker:19.03.0
+  image: docker:20.10.12
   script:
-    - export DOCKER_TAG=$TAG:latest
-    - docker build -t $DOCKER_TAG .
+    - cd build
+    - npmrc=$(cat ~/.npmrc| base64)
+    - export DOCKER_TAG=$TAG/server:latest
+    - docker build --build-arg NPMRC="$npmrc" -t $DOCKER_TAG .
     - docker push $DOCKER_TAG
+
+publish_static_master:
+    stage: publish
+    image: docker:20.10.12
+    only:
+        - main
+    script:
+        - cd public
+        - export DOCKER_TAG=$TAG/static:latest
+        - docker build -t $DOCKER_TAG .
+        - docker push $DOCKER_TAG

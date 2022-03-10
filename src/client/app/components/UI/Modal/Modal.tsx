@@ -32,20 +32,20 @@ export const Modal = ({ isOpen = false, className, children, ...props }: ModalPr
         exit: { opacity: 0, transition: { duration: 1 } },
     };
 
-    const content = isLarge
-        ? {
-              hidden: { top: '50%', y: '-60%', opacity: 0, x: '-50%' },
-              visible: { top: '50%', y: '-50%', opacity: 1, transition: { duration: 1 } },
-              exit: { top: '50%', y: '-60%', opacity: 0, transition: { duration: 1 } },
-          }
-        : {
-              hidden: { x: '-100%', opacity: 1 },
-              visible: { x: '0%', opacity: 1, transition: { duration: 1 } },
-              exit: { x: '-100%', opacity: 1, transition: { duration: 1 } },
-          };
+    const content = {
+        hidden: { x: '-100%', opacity: 1 },
+        visible: { x: '0%', opacity: 1, transition: { duration: 1 } },
+        exit: { x: '-100%', opacity: 1, transition: { duration: 1 } },
+    };
+
+    const contentLarge = {
+        hidden: { top: '50%', y: '-60%', opacity: 0, x: '-50%' },
+        visible: { top: '50%', y: '-50%', opacity: 1, transition: { duration: 1 } },
+        exit: { top: '50%', y: '-60%', opacity: 0, transition: { duration: 1 } },
+    };
 
     const afterOpenHandler = () => {
-        document.documentElement.style.marginRight = `${width}px`;
+        if (document.documentElement.scrollHeight > document.documentElement.clientHeight) document.documentElement.style.marginRight = `${width}px`;
         document.documentElement.classList.add('modal-root');
     };
 
@@ -70,11 +70,22 @@ export const Modal = ({ isOpen = false, className, children, ...props }: ModalPr
                             {contentElement}
                         </motion.div>
                     )}
-                    contentElement={(props: ComponentPropsWithRef<any>, children: ReactNode) => (
-                        <motion.div animate='visible' initial='hidden' exit='exit' variants={content} {...props}>
-                            {children}
-                        </motion.div>
-                    )}
+                    contentElement={(props: ComponentPropsWithRef<any>, children: ReactNode) =>
+                        <>
+                            {isLarge && (
+                                <motion.div animate='visible' initial='hidden' exit='exit' variants={contentLarge} {...props}>
+                                    {children}
+                                </motion.div>
+                            )}
+
+                            {!isLarge && (
+                                <motion.div animate='visible' initial='hidden' exit='exit' variants={content} {...props}>
+                                    {children}
+                                </motion.div>
+                            )}
+                        </>
+
+                    }
                     {...props}
                 >
                     {children}

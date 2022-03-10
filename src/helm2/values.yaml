@@ -1,2 +1,3 @@
 tlsEnabled: true
+image: registry.gmdp.io/glonassmobile/tapmobile/web/static
 domain: tapmobile.ru

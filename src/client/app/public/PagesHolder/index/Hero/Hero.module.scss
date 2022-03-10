@@ -1,9 +1,19 @@
-.section {
+.hero {
   position: relative;
-  z-index: 2;
-  padding-bottom: 181px;
+  padding-top: 60px;
+  background-image: url("/img/index/hero-mobile.jpeg");
 
   @include xl-block {
-    padding-bottom: 149px;
+    background-image: url("/img/index/hero.jpeg");
+  }
+}
+
+@supports (background-image: url("/img/index/hero-mobile.webp")) {
+  .hero {
+    background-image: url("/img/index/hero-mobile.webp");
+
+    @include xl-block {
+      background-image: url("/img/index/hero.webp");
+    }
   }
 }

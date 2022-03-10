@@ -1,5 +1,6 @@
 .modal {
   position: fixed;
+  z-index: 200;
   overflow-x: hidden;
   padding: 32px;
   width: 100%;
@@ -28,7 +29,9 @@
 
 .portal {
   position: fixed;
-  z-index: 100;
+  z-index: 1000;
+  width: 1px;
+  height: 1px;
 }
 
 .overlay {

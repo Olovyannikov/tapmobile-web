@@ -1,4 +1,5 @@
 module.exports = {
+    distDir: 'build/.next',
     reactStrictMode: false,
     webpack5: true,
     swcMinify: false,

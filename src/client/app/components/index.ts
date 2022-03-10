@@ -2,3 +2,8 @@ export * from './DotsAnimation/DotsAnimation';
 export * from './GradientHero/GradientHero';
 export * from './Social/Social';
 export * from './FormInput/FormInput';
+export * from './HeroSection/HeroSection';
+export * from './Modals/Modals';
+export * from './About/About';
+export * from './ChoosingReasons/ChoosingReasons';
+export * from './Connect/Connect';

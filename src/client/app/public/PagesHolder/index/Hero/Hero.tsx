@@ -1,19 +1,20 @@
-import { Container } from '@/ui';
+import { useIsLarge } from '@client/hooks/useMediaQuery';
 
-import { HeroImage } from './HeroImage/HeroImage';
-import { HeroContent } from './HeroContent/HeroContent';
-import { HeroAnimation } from './HeroAnimation/HeroAnimation';
+import { HeroSection } from '@/components';
+import { HeroButtons } from './HeroButtons/HeroButtons';
 
 import s from './Hero.module.scss';
+import { HeroBaloon } from './HeroBaloon/HeroBaloon';
 
 export const Hero = (): JSX.Element => {
     return (
-        <section className={s.section}>
-            <Container className={s.container}>
-                <HeroImage />
-                <HeroAnimation />
-                <HeroContent />
-            </Container>
-        </section>
+        <HeroSection
+            className={s.hero}
+            title='Запусти собственного мобильного оператора связи'
+            text='Уже через 2 месяца вы получите SIM-карты оператора связи под брендом вашей компании и доступ в личный кабинет для управления тарифами и трафиком'
+        >
+            <HeroButtons />
+            <HeroBaloon />
+        </HeroSection>
     );
 };

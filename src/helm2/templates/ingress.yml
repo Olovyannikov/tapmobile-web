@@ -10,10 +10,6 @@ metadata:
     nginx.ingress.kubernetes.io/proxy-send-timeout: "600"
     {{ if .Values.tlsEnabled }}kubernetes.io/tls-acme: "true"
     cert-manager.io/cluster-issuer: "letsencrypt-prod"{{ end }}
-    nginx.ingress.kubernetes.io/server-snippet: |
-      location / {
-          return 302 https://tapmobile.one/;
-      }
 spec:
   {{ if .Values.tlsEnabled }}tls:
     - hosts:
@@ -23,7 +19,21 @@ spec:
     - host: {{ .Values.domain }}
       http:
         paths:
-        - path: /test
+        - path: /fonts
+          pathType: Prefix
+          backend:
+            service:
+              name: tapmobile-web
+              port:
+                number: 80
+        - path: /img
+          pathType: Prefix
+          backend:
+            service:
+              name: tapmobile-web
+              port:
+                number: 80
+        - path: /sprite
           pathType: Prefix
           backend:
             service:

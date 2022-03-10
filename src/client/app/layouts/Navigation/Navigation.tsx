@@ -3,7 +3,7 @@ import cn from 'classnames';
 import { useRouter } from 'next/router';
 import { useTypedDispatch } from '@client/hooks/useTypedDispatch';
 
-import { Icon } from '@/ui';
+import { Button, Icon } from '@/ui';
 
 import Link from 'next/link';
 
@@ -28,10 +28,10 @@ export const Navigation = ({ className, isActive, ...props }: NavigationProps): 
                     </li>
                 ))}
             </ul>
-            <button onClick={() => showPublicModal('auth')} className={cn(s.btn, { [s.active]: isActive })}>
+            <Button onClick={() => showPublicModal('auth')} className={cn(s.btn, { [s.active]: isActive })}>
                 Личный кабинет
                 <Icon icon='login' width={24} height={24} />
-            </button>
+            </Button>
         </>
     );
 };

@@ -2,6 +2,8 @@ import { FC } from 'react';
 import { SliderContextProvider } from '@client/context/slider.context';
 
 import { Layout } from '@/layouts/Layout';
+import { Modals } from '@/components';
+
 import { Hero } from './Hero/Hero';
 import { CreateOperator } from './CreateOperator/CreateOperator';
 import { Steps } from './Steps/Steps';
@@ -13,11 +15,10 @@ import { About } from './About/About';
 import { SliderToStart } from './SliderToStart/SliderToStart';
 import { FAQ } from './FAQ/FAQ';
 import { Demo } from './Demo/Demo';
-import { Modals } from '@client/app/components/Modals/Modals';
 
 export const Index: FC = (): JSX.Element => {
     return (
-        <Layout>
+        <Layout title='Tapmobile | Главная'>
             <SliderContextProvider>
                 <Hero />
                 <CreateOperator />

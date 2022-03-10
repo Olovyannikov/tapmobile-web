@@ -62,7 +62,7 @@ export const IntegrationNav = (): JSX.Element => {
                     </button>
                 </div>
             </Swiper>
-            {/*<ModalsContent articleId={id} />*/}
+            {/*<IntegrationContent articleId={id} />*/}
         </AnimateSharedLayout>
     );
 };

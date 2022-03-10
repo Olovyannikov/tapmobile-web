@@ -12,7 +12,7 @@ export const AboutAchievements = (): JSX.Element => {
     return (
         <div className={s.achievements}>
             <div className={s.image}>
-                <Image src='/img/about-image.jpg' layout={isLarge ? 'fill' : 'responsive'} width={319} height={224} />
+                <Image src='/img/about-image.jpeg' layout={isLarge ? 'fill' : 'responsive'} width={319} height={224} />
             </div>
             <div className={s.text}>
                 <h4 className={s.title}>Что мы сделали</h4>

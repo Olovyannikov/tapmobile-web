@@ -3,8 +3,11 @@ import { Button, Container, Title } from '@/ui';
 import MapImage from './img/map.svg';
 
 import s from './Map.module.scss';
+import { useTypedDispatch } from '@client/hooks/useTypedDispatch';
 
 export const Map = (): JSX.Element => {
+    const { modals: { showPublicModal } } = useTypedDispatch();
+
     return (
         <section className={s.map}>
             <Container className={s.container}>
@@ -20,7 +23,7 @@ export const Map = (): JSX.Element => {
                         млн
                         чел.
                     </p>
-                    <Button className={s.btn}>Получить консультацию</Button>
+                    <Button className={s.btn} onClick={() => showPublicModal('feedback')}>Получить консультацию</Button>
                 </div>
             </Container>
             <div className={s.image}>

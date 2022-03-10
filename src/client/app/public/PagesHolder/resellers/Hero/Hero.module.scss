@@ -1,0 +1,18 @@
+.hero {
+  @include webp("/img/resellers/hero.jpeg", "/img/resellers/hero.webp");
+
+  margin-bottom: 100px;
+  padding-top: 111px;
+  padding-bottom: 60px;
+
+  @include xl-block {
+    @include webp("/img/resellers/hero-desktop.jpeg", "/img/resellers/hero-desktop.webp");
+
+    padding-top: 78px;
+    padding-bottom: 110px;
+
+    h1 {
+      white-space: nowrap;
+    }
+  }
+}

@@ -5,6 +5,7 @@ import { ButtonProps } from './Button.props';
 
 export const Button = ({
                            variant = 'primary',
+                           size = 'medium',
                            full = false,
                            className,
                            children,
@@ -13,7 +14,7 @@ export const Button = ({
                            ...props
                        }: ButtonProps): JSX.Element =>
     <button
-        className={cn(s.button, s[variant], { [s.full]: full }, className)}
+        className={cn(s.button, s[variant], s[size], { [s.full]: full }, className)}
         disabled={disabled}
         type={type}
         {...props}

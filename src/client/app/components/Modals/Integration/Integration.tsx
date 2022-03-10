@@ -1,15 +1,20 @@
+import { useContext } from 'react';
 import { useTypedDispatch } from '@client/hooks/useTypedDispatch';
 
 import { Icon } from '@/ui';
 
 import { IntegrationNav } from './IntegrationNav/IntegrationNav';
+import { IntegrationContent } from './IntegrationContent/IntegrationContent';
 
 import s from './Integration.module.scss';
+import { SliderStateContext } from '@client/context/slider.context';
 
 export const Integration = (): JSX.Element => {
     const {
         modals: { hideModal },
     } = useTypedDispatch();
+
+    const { id } = useContext(SliderStateContext);
 
     return (
         <div className={s.integration}>
@@ -21,6 +26,7 @@ export const Integration = (): JSX.Element => {
             </div>
             <div className={s.content}>
                 <IntegrationNav />
+                <IntegrationContent articleId={id} />
             </div>
         </div>
     );

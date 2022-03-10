@@ -1,8 +1,3 @@
 .main {
   overflow-x: hidden;
-  padding-top: 60px;
-
-  @include xl-block {
-    padding-top: 72.5px;
-  }
 }

@@ -1,5 +1,5 @@
-import { Index as Main } from '@/public-app';
+import { Index } from '@/public-app';
 
-const Index = (): JSX.Element => <Main />;
+const IndexPage = (): JSX.Element => <Index />;
 
-export default Index;
+export default IndexPage;

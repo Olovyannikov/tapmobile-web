@@ -45,7 +45,7 @@ export const Slider = (): JSX.Element => {
                                 <span className={s.description}>{text}</span>
                             </button>
                         </SwiperSlide>
-                    )
+                    ),
                 )}
             </Swiper>
         </div>

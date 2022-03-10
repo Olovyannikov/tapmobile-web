@@ -1,0 +1,16 @@
+.hero {
+  @include webp("/img/iot/hero.webp", "/img/iot/hero.jpeg");
+
+  overflow: hidden;
+  margin-bottom: 72px;
+  padding-top: 134px;
+  padding-bottom: 59px;
+
+  @include xl-block {
+    @include webp("/img/iot/hero-desktop.webp", "/img/iot/hero-desktop.jpeg");
+
+    margin-bottom: 80px;
+    padding-top: 78px;
+    padding-bottom: 138px;
+  }
+}

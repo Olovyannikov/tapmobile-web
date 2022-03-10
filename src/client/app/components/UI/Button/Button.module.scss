@@ -55,3 +55,17 @@
     background-color: transparent;
   }
 }
+
+// sizes
+
+.small {
+  @include xl-block {
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+}
+
+.medium {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}

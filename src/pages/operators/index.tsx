@@ -8,7 +8,7 @@ const OperatorsPage = ({ data }: IPageData): JSX.Element => <Operators data={dat
 export default OperatorsPage;
 
 export const getServerSideProps: GetStaticProps = async () => {
-    const data = await getData(`${process.env.API_HOST}/data/content/operators/operators.json`);
+    const data = await getData(`${process.env.NEXT_PUBLIC_DOMAIN}/content/operators/operators.json`);
 
     if (!data) return { notFound: true };
 

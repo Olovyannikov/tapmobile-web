@@ -1,0 +1,54 @@
+.error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 102px;
+  padding-bottom: 60px;
+  text-align: center;
+}
+
+.error h1 {
+  margin: 0 0 34px;
+  font-weight: 600;
+  font-size: 96px;
+  line-height: 56px;
+  color: #000;
+}
+
+.error h2 {
+  margin: 0 0 34px;
+  color: #000;
+}
+
+.error p {
+  margin: 0 auto 116px;
+  max-width: 737px;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 36px;
+  color: #000;
+}
+
+.error .images {
+  position: relative;
+  display: flex;
+  column-gap: 20px;
+}
+
+.error svg {
+  bottom: -160px;
+
+  &:first-child {
+    left: 0;
+    max-width: 905px;
+  }
+
+  &:last-child {
+    right: 0;
+    max-width: 868px;
+  }
+
+  @include xl-block {
+    display: block;
+  }
+}

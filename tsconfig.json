@@ -11,7 +11,9 @@
       "@/utils": ["client/utils.ts"],
       "@/connection": ["client/Connection.ts"],
       "@/ui": ["client/app/components/UI/index.ts"],
-      "@store/*": ["client/store/*"]
+      "@store/*": ["client/store/*"],
+      "@/hooks/*": ["client/hooks/*"],
+      "@/types/*": ["client/types/*"]
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],

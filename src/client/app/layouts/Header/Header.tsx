@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { useToggle } from '@client/hooks/useToggle';
 import useScrollbarSize from 'react-scrollbar-size';
+import { useIsScroll } from '@client/hooks/useIsScroll';
 import { useDocumentToScrollThrottled } from '@client/hooks/useDocumentToScrollThrottled';
 
 import { Burger, Container } from '@/ui';
@@ -14,10 +15,12 @@ import { Navigation } from '../Navigation/Navigation';
 
 import s from './Header.module.scss';
 import { HeaderProps } from './Header.props';
+import { errorRoutes } from '@client/utils/utils';
 
 export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
     const router = useRouter();
     const { width } = useScrollbarSize();
+    const hasScroll = useIsScroll();
 
     const [isActive, setActive] = useToggle(false);
     const [isHidden, setHidden] = useState<boolean>(false);
@@ -49,7 +52,7 @@ export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
     });
 
     return (
-        <header className={cn(s.header, { [s.hidden]: isHidden, [s.scrolled]: isScrolled }, className)} {...props}>
+        <header className={cn(s.header, { [s.hidden]: isHidden && hasScroll, [s.scrolled]: isScrolled || !hasScroll }, className)} {...props}>
             <Container className={s.container}>
                 {router.pathname === '/' ? (
                     <a className={cn(s.logo, { [s.active]: isActive })}>
@@ -57,14 +60,14 @@ export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
                     </a>
                 ) : (
                     <Link href='/'>
-                        <a className={cn(s.logo, { [s.active]: isActive })}>
+                        <a className={cn(s.logo, { [s.active]: errorRoutes.includes(router.pathname) || isActive })}>
                             <Logo />
                         </a>
                     </Link>
                 )}
                 <nav className={s.navigation}>
                     <Navigation isActive={isActive} className={cn(s.nav, { [s.active]: isActive })} />
-                    <Burger className={cn(s.burger, { [s.active]: isActive })} onClick={setActive} isActive={isActive} />
+                    <Burger className={cn(s.burger, { [s.active]:  errorRoutes.includes(router.pathname) || isActive })} onClick={setActive} isActive={isActive} />
                 </nav>
             </Container>
         </header>

@@ -1,19 +1,15 @@
-import { useAsyncData } from '@client/hooks/useAsyncData';
-
 import { Layout } from '@/layouts/Layout';
 
 import { Modals, About, ChoosingReasons, Connect } from '@/components';
 
 import { Hero } from './Hero/Hero';
 
-export const Operators = (): JSX.Element => {
-    const text = useAsyncData('/content/operators/about.json');
-
+export const Operators = ({data}): JSX.Element => {
     return (
         <Layout title='Tapmobile | Операторам'>
             <Hero />
-            <About text={text?.about.text} />
-            <ChoosingReasons subtitle={text?.reasons.subtitle} list={text?.reasons.list} />
+            <About text={data?.about.text} />
+            <ChoosingReasons subtitle={data?.reasons.subtitle} list={data?.reasons.list} />
             <Connect />
             <Modals />
         </Layout>

@@ -39,7 +39,7 @@ spec:
             - containerPort: 3000
           env:
             - name: KUBE_POD_NAME
-              value: { { .Chart.Name } }
+              value: {{ .Chart.Name }}
             - name: KUBE_NAMESPACE_NAME
               valueFrom:
                 fieldRef:

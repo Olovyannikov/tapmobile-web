@@ -14,3 +14,5 @@ export const emailPattern = {
 export const phoneRegExp = /\+7\([0-9]{3}\)-[0-9]{3}-[0-9]{2}-[0-9]{2}/;
 
 export const clearInput = (e) => (e.target.parentElement.querySelector('input').value = '');
+
+export const errorRoutes = ['/404', '/500'];

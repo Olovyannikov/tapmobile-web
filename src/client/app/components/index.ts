@@ -7,3 +7,4 @@ export * from './Modals/Modals';
 export * from './About/About';
 export * from './ChoosingReasons/ChoosingReasons';
 export * from './Connect/Connect';
+export * from './ErrorMessage/ErrorMessage';
